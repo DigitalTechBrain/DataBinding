@@ -75,9 +75,37 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\MyDatabase.mdf" />
+    <Content Include="App_Data\MyDatabase_log.ldf">
+      <DependentUpon>MyDatabase.mdf</DependentUpon>
+    </Content>
+    <Content Include="GridViewButtonTemplateEvent.aspx" />
+    <Content Include="GridViewDemo.aspx" />
+    <Content Include="GridViewEditUpdateDelete.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GridViewButtonTemplateEvent.aspx.cs">
+      <DependentUpon>GridViewButtonTemplateEvent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GridViewButtonTemplateEvent.aspx.designer.cs">
+      <DependentUpon>GridViewButtonTemplateEvent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GridViewDemo.aspx.cs">
+      <DependentUpon>GridViewDemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GridViewDemo.aspx.designer.cs">
+      <DependentUpon>GridViewDemo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GridViewEditUpdateDelete.aspx.cs">
+      <DependentUpon>GridViewEditUpdateDelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GridViewEditUpdateDelete.aspx.designer.cs">
+      <DependentUpon>GridViewEditUpdateDelete.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <PropertyGroup>
