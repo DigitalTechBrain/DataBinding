@@ -59,6 +59,9 @@ namespace GridFormDemo
             string name = ((TextBox)GridView1.FooterRow.FindControl("TextBox4")).Text;
             string address = ((TextBox)GridView1.FooterRow.FindControl("TextBox5")).Text;
             string str = "insert into tbl values('"+name+"','"+address+"')";
+            //string str = insert into tbl values('@name','@address'))";
+            //cmd.Parameters.Add("@name",name);
+            //cmd.Parameters.Add("@address",address);
             SqlCommand cmd = new SqlCommand(str, con);
             con.Open();
             cmd.ExecuteNonQuery();

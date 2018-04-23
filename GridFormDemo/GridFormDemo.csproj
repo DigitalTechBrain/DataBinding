@@ -79,12 +79,34 @@
     <Content Include="App_Data\MyDatabase_log.ldf">
       <DependentUpon>MyDatabase.mdf</DependentUpon>
     </Content>
+    <Content Include="Controls.aspx" />
+    <Content Include="FormViewDemo.aspx" />
     <Content Include="GridViewButtonTemplateEvent.aspx" />
     <Content Include="GridViewDemo.aspx" />
     <Content Include="GridViewEditUpdateDelete.aspx" />
+    <Content Include="ListViewDemo.aspx" />
+    <Content Include="MsAccessConnection.aspx" />
+    <Content Include="MsAccessDemo.aspx" />
+    <Content Include="MsAccess\MyDatabase.accdb" />
     <Content Include="Web.config" />
+    <Content Include="XmlDemo.aspx" />
+    <Content Include="XMLFile\XMLFile1.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls.aspx.cs">
+      <DependentUpon>Controls.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls.aspx.designer.cs">
+      <DependentUpon>Controls.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormViewDemo.aspx.cs">
+      <DependentUpon>FormViewDemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormViewDemo.aspx.designer.cs">
+      <DependentUpon>FormViewDemo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GridViewButtonTemplateEvent.aspx.cs">
       <DependentUpon>GridViewButtonTemplateEvent.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -106,8 +128,37 @@
     <Compile Include="GridViewEditUpdateDelete.aspx.designer.cs">
       <DependentUpon>GridViewEditUpdateDelete.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ListViewDemo.aspx.cs">
+      <DependentUpon>ListViewDemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListViewDemo.aspx.designer.cs">
+      <DependentUpon>ListViewDemo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MsAccessConnection.aspx.cs">
+      <DependentUpon>MsAccessConnection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MsAccessConnection.aspx.designer.cs">
+      <DependentUpon>MsAccessConnection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MsAccessDemo.aspx.cs">
+      <DependentUpon>MsAccessDemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MsAccessDemo.aspx.designer.cs">
+      <DependentUpon>MsAccessDemo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XmlDemo.aspx.cs">
+      <DependentUpon>XmlDemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XmlDemo.aspx.designer.cs">
+      <DependentUpon>XmlDemo.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

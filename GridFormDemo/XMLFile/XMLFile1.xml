@@ -1,0 +1,19 @@
+<?xml version="1.0" standalone="yes"?>
+<XmlDatabase>
+  <XmlTable>
+    <Name>
+  Back
+  </Name>
+    <Rank>
+    General
+  </Rank>
+    <Address>
+    Pitampura
+  </Address>
+  </XmlTable>
+  <XmlTable>
+    <Name>Jack</Name>
+    <Rank>Captain</Rank>
+    <Address>Bhajan Pura</Address>
+  </XmlTable>
+</XmlDatabase>
