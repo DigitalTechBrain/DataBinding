@@ -16,21 +16,46 @@ namespace GridFormDemo
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            disp();
+            if (!IsPostBack)
+            {
+                PopulateGridview();
+            }
+
+
         }
 
-        void disp()
+        void PopulateGridview()
         {
-            string str = "select * from tbl";
-            SqlDataAdapter da = new SqlDataAdapter(str, con);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            GridView1.DataSource = ds.Tables[0];
-            GridView1.DataBind();
+            DataTable dtbl = new DataTable();
+            using (SqlConnection sqlCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["conn"].ToString()))
+            {
+                sqlCon.Open();
+                SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT * FROM tbl", sqlCon);
+                sqlDa.Fill(dtbl);
+            }
+            if (dtbl.Rows.Count > 0)
+            {
+                GridView1.DataSource = dtbl;
+                GridView1.DataBind();
+            }
+            else
+            {
+                dtbl.Rows.Add(dtbl.NewRow());
+                GridView1.DataSource = dtbl;
+                GridView1.DataBind();
+                GridView1.Rows[0].Cells.Clear();
+                GridView1.Rows[0].Cells.Add(new TableCell());
+                GridView1.Rows[0].Cells[0].ColumnSpan = dtbl.Columns.Count;
+                GridView1.Rows[0].Cells[0].Text = "No Data Found ..!";
+                GridView1.Rows[0].Cells[0].HorizontalAlign = HorizontalAlign.Center;
+            }
+
         }
 
+       
         protected void Button2_Click(object sender, EventArgs e)
         {
+            
             string name = ((TextBox)GridView1.FooterRow.FindControl("TextBox4")).Text;
             string address = ((TextBox)GridView1.FooterRow.FindControl("TextBox5")).Text;
             string str = "insert into tbl values('"+name+"','"+address+"')";
@@ -39,29 +64,58 @@ namespace GridFormDemo
             cmd.ExecuteNonQuery();
             con.Close();
 
-            disp();
+            PopulateGridview();
+
+            Label4.Text = "Record Added Successfully...!!!";
         }
 
-        protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
+       
+    
+
+    protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
         {
             GridView1.EditIndex = e.NewEditIndex;
-            disp();
+            PopulateGridview();
         }
 
         protected void GridView1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
             GridView1.EditIndex = -1;
-            disp();
+            PopulateGridview();
         }
 
         protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
+            string name = ((TextBox)GridView1.Rows[e.RowIndex].FindControl("TextBox2")).Text;
+            string address = ((TextBox)GridView1.Rows[e.RowIndex].FindControl("TextBox3")).Text;
+            string id = ((Label)GridView1.Rows[e.RowIndex].FindControl("Label1")).Text;
+
+            string str = "UPDATE tbl SET Ename='"+name+"',Eaddress='"+address+"' WHERE Sno = '" + int.Parse(id) + "'";
+            SqlCommand cmd = new SqlCommand(str, con);
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
+            GridView1.EditIndex = -1;
+
+            PopulateGridview();
+
+            Label4.Text = "Record Updated Successfully...!!!";
 
         }
 
         protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
+            string name = ((Label)GridView1.Rows[e.RowIndex].FindControl("Label2")).Text;
+            string address = ((Label)GridView1.Rows[e.RowIndex].FindControl("Label3")).Text;
+            string str = "DELETE FROM tbl WHERE Ename = '"+name+"' and Eaddress = '"+address+"' ";
+            SqlCommand cmd = new SqlCommand(str, con);
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
 
+            PopulateGridview();
+
+            Label4.Text = "Record Deleted Successfully...!!!";
         }
     }
 }
