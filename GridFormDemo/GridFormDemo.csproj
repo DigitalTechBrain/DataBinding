@@ -88,6 +88,7 @@
     <Content Include="MsAccessConnection.aspx" />
     <Content Include="MsAccessDemo.aspx" />
     <Content Include="MsAccess\MyDatabase.accdb" />
+    <Content Include="SqlDataReaderDemo.aspx" />
     <Content Include="Web.config" />
     <Content Include="XmlDemo.aspx" />
     <Content Include="XMLFile\XMLFile1.xml" />
@@ -150,6 +151,13 @@
       <DependentUpon>MsAccessDemo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlDataReaderDemo.aspx.cs">
+      <DependentUpon>SqlDataReaderDemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlDataReaderDemo.aspx.designer.cs">
+      <DependentUpon>SqlDataReaderDemo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="XmlDemo.aspx.cs">
       <DependentUpon>XmlDemo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
