@@ -50,5 +50,10 @@ namespace GridFormDemo
         {
             Response.Redirect("MsAccessConnection.aspx");
         }
+
+        protected void Button9_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ImageDispGridview.aspx");
+        }
     }
 }

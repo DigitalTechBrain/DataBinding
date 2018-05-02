@@ -84,6 +84,8 @@
     <Content Include="GridViewButtonTemplateEvent.aspx" />
     <Content Include="GridViewDemo.aspx" />
     <Content Include="GridViewEditUpdateDelete.aspx" />
+    <Content Include="ImageDispGridview.aspx" />
+    <Content Include="Images\India.jpg" />
     <Content Include="ListViewDemo.aspx" />
     <Content Include="MsAccessConnection.aspx" />
     <Content Include="MsAccessDemo.aspx" />
@@ -128,6 +130,13 @@
     </Compile>
     <Compile Include="GridViewEditUpdateDelete.aspx.designer.cs">
       <DependentUpon>GridViewEditUpdateDelete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ImageDispGridview.aspx.cs">
+      <DependentUpon>ImageDispGridview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ImageDispGridview.aspx.designer.cs">
+      <DependentUpon>ImageDispGridview.aspx</DependentUpon>
     </Compile>
     <Compile Include="ListViewDemo.aspx.cs">
       <DependentUpon>ListViewDemo.aspx</DependentUpon>

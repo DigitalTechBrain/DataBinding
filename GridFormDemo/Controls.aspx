@@ -38,6 +38,11 @@
             <asp:Button ID="Button8" runat="server" OnClick="Button8_Click" Text="MsAccess Connection" />
         </p>
         <p>
+            -------------------------------------------</p>
+        <p>
+            <asp:Button ID="Button9" runat="server" OnClick="Button9_Click" Text="Image Display in Grid View" />
+        </p>
+        <p>
             &nbsp;</p>
     </form>
 </body>
