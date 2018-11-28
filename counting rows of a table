@@ -1,0 +1,14 @@
+c#
+--------------------------------------------------------------------
+string str = "SELECT COUNT(Mno) FROM Mechanics where MStatus = 'Active'";
+            SqlCommand cmd = new SqlCommand(str, con);
+            con.Open();
+            int i = (int)cmd.ExecuteScalar();
+            con.Close();
+
+            Label2.Text = i.ToString();
+           
+           
+           
+           -----------------------------------------
+           
