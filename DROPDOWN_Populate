@@ -1,0 +1,12 @@
+con.Open();
+
+            SqlCommand com = new SqlCommand("SELECT DISTINCT State FROM Territory ORDER BY State", con); // table name 
+            SqlDataAdapter da = new SqlDataAdapter(com);
+            DataSet ds = new DataSet();
+            da.Fill(ds);  // fill dataset
+            DropDownList1.DataTextField = ds.Tables[0].Columns["State"].ToString(); // text field name of table dispalyed in dropdown
+           // DropDownList1.DataValueField = ds.Tables[0].Columns["id"].ToString();             // to retrive specific  textfield name 
+            DropDownList1.DataSource = ds.Tables[0];      //assigning datasource to the dropdownlist
+            DropDownList1.DataBind();  //binding dropdownlist
+
+            con.Close();
